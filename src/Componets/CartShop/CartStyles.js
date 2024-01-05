@@ -16,7 +16,6 @@ export const Title = styled.h1`
 export const CartList = styled.div`
   width: 90%;
   height: 70%;
-  background-color: aliceblue;
 `;
 
 export const TotalTitle = styled.h4`
