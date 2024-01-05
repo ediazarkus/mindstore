@@ -21,7 +21,6 @@ const ModalProduct = ({ open, close, product }) => {
   const handleClosemodal = () => {
     close();
   };
-  console.log(product);
 
   return (
     <ModalContainer open={open}>

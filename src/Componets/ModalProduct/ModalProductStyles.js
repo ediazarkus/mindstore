@@ -20,8 +20,8 @@ export const ModalBack = styled.div`
 
 export const ModalCard = styled.div`
   position: absolute;
-  height: 50%;
-  width: 50%;
+  height: 60%;
+  width: 60%;
   display: flex;
   border-radius: 20px;
   background-color: turquoise;
@@ -66,6 +66,8 @@ export const CloseButton = styled.img`
   border-radius: 50px;
   border: 1px solid black;
   padding: 2px;
+  margin-top: 5px;
+  margin-left: 5px;
 `;
 
 export const ProductDetails = styled.p`
@@ -80,7 +82,7 @@ export const RatingContent = styled.div`
   display: flex;
   align-items: center;
   margin-left: 10px;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   height: 10%;
   padding-bottom: 10px;
 `;
@@ -101,6 +103,10 @@ export const AddProduct = styled.button`
   align-items: center;
   justify-self: flex-end;
   border-radius: 50%;
+  margin-left: 40%;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const AddIcon = styled.img`
