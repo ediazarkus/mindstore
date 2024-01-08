@@ -13,20 +13,21 @@ export const Title = styled.h1`
   width: 100%;
   text-align: center;
   height: 5%;
+  margin: 0px;
 `;
 
 export const CartProcutList = styled.div`
   display: flex;
-  height: 65%;
+  height: 60%;
   width: 90%;
   align-items: center;
-  /* background-color: #f2f2f2; */
   flex-direction: column;
   overflow-y: auto;
   max-height: 100%;
+  margin-top: 5%;
 
   &::-webkit-scrollbar {
-    display: none; /* Chrome y Safari */
+    display: none;
   }
 `;
 
@@ -49,6 +50,8 @@ export const Note = styled.p`
   font-size: 15px;
   color: red;
   margin-left: 5px;
+  margin: 0;
+  height: 3%;
 `;
 export const TotalTitle = styled.p``;
 export const TotalAmount = styled.p``;
@@ -61,4 +64,45 @@ export const TotalTitleFinal = styled.p`
 export const Total = styled.p`
   font-size: 18px;
   font-weight: bold;
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  width: 90%;
+  height: 8%;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+export const PayButton = styled.button`
+  width: 40%;
+  height: 50%;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: lightgreen;
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+export const CleanButton = styled.button`
+  width: 40%;
+  height: 50%;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: lightcoral;
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
+export const Cardlogo = styled.img`
+  width: 20px;
 `;
