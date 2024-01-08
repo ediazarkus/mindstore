@@ -5,7 +5,7 @@ import CardProduct from '../CardProduct/CardProduct';
 import fetchData from '../../Services/ProductsService';
 import Spinner from '../Spinner/Spinner';
 
-const Product = ({ searchTerm }) => {
+const Product = ({ searchTerm, addToCart }) => {
   const [originalData, setOriginalData] = useState(null);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -43,8 +43,6 @@ const Product = ({ searchTerm }) => {
     setData(filteredResults);
   }, [searchTerm]);
 
-  console.log(data);
-
   return (
     <>
       {isLoading ? (
@@ -54,7 +52,11 @@ const Product = ({ searchTerm }) => {
           <ProductContainer>
             <CardProductContainer>
               {data.map((product) => (
-                <CardProduct key={product.id} product={product} />
+                <CardProduct
+                  key={product.id}
+                  product={product}
+                  addToCart={addToCart}
+                />
               ))}
             </CardProductContainer>
           </ProductContainer>

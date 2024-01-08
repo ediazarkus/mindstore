@@ -17,9 +17,13 @@ import {
 } from './ModalProductStyles';
 import StarRating from '../StarRating/StarRating';
 
-const ModalProduct = ({ open, close, product }) => {
+const ModalProduct = ({ open, close, product, addToCart }) => {
   const handleClosemodal = () => {
     close();
+  };
+
+  const handleAdd = () => {
+    addToCart(product);
   };
 
   return (
@@ -40,7 +44,10 @@ const ModalProduct = ({ open, close, product }) => {
             <ProductRating>{product.rating.rate}</ProductRating>
             <TotalReviews>({product.rating.count})</TotalReviews>
             <AddProduct>
-              <AddIcon src={require('../../assets/addcart1.png')} />
+              <AddIcon
+                src={require('../../assets/addcart1.png')}
+                onClick={handleAdd}
+              />
             </AddProduct>
           </RatingContent>
         </ModalDetails>
