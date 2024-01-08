@@ -5,7 +5,8 @@ import CardProduct from '../CardProduct/CardProduct';
 import fetchData from '../../Services/ProductsService';
 import Spinner from '../Spinner/Spinner';
 
-const Product = () => {
+const Product = ({ searchTerm, addToCart }) => {
+  const [originalData, setOriginalData] = useState(null);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -15,6 +16,7 @@ const Product = () => {
       try {
         const result = await fetchData();
         setData(result);
+        setOriginalData(result);
       } catch (error) {
         setError(error);
       } finally {
@@ -24,6 +26,23 @@ const Product = () => {
 
     fetchDataFromApi();
   }, []);
+
+  useEffect(() => {
+    if (searchTerm === '') {
+      setData(originalData);
+      return;
+    }
+    const filteredResults = originalData
+      ? originalData.filter(
+          (item) =>
+            item &&
+            item.title &&
+            item.title.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      : [];
+    setData(filteredResults);
+  }, [searchTerm]);
+
   return (
     <>
       {isLoading ? (
@@ -33,7 +52,11 @@ const Product = () => {
           <ProductContainer>
             <CardProductContainer>
               {data.map((product) => (
-                <CardProduct key={product.id} product={product} />
+                <CardProduct
+                  key={product.id}
+                  product={product}
+                  addToCart={addToCart}
+                />
               ))}
             </CardProductContainer>
           </ProductContainer>

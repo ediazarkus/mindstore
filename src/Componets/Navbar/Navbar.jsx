@@ -9,11 +9,16 @@ import {
   NavbarTitleImage,
 } from './NavbarStyles';
 
-const Navbar = () => {
+const Navbar = ({ onInputChange }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const handleInputChange = (event) => {
+    const term = event.target.value;
+    onInputChange(term);
   };
 
   return (
@@ -25,7 +30,11 @@ const Navbar = () => {
         />
         Mind Store
       </NavbarTitle>
-      <NavbarSearch type="text" placeholder="Search..." />
+      <NavbarSearch
+        type="text"
+        placeholder="Search..."
+        onChange={handleInputChange}
+      />
       <NavbarLinks style={{ display: showMenu ? 'flex' : 'none' }}>
         <NavbarLink href="#">Home</NavbarLink>
         <NavbarLink href="#">About</NavbarLink>

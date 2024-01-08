@@ -15,7 +15,7 @@ import {
 import StarRating from '../StarRating/StarRating';
 import ModalProduct from '../ModalProduct/ModalProduct';
 
-const CardProduct = ({ product }) => {
+const CardProduct = ({ product, addToCart }) => {
   const [Openmodal, setOpenmodal] = useState(false);
 
   const handleOpenModal = () => {
@@ -50,6 +50,7 @@ const CardProduct = ({ product }) => {
         open={Openmodal}
         close={handleCloseModal}
         product={product}
+        addToCart={addToCart}
       />
     </>
   );
