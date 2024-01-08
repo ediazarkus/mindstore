@@ -53,6 +53,10 @@ function App() {
     setCartItems(updatedCartItems);
   };
 
+  const handleClearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <AppContainer>
       <Navbar onInputChange={handleInputChange} />
@@ -62,6 +66,7 @@ function App() {
           cartItems={cartItems}
           onRemoveItem={handleRemoveItem}
           handleAddItem={handleAddItem}
+          handleClearCart={handleClearCart}
         />
       </AppBody>
     </AppContainer>

@@ -1,8 +1,12 @@
 import React from 'react';
 import {
+  ButtonsContainer,
+  Cardlogo,
   CartContainer,
   CartProcutList,
+  CleanButton,
   Note,
+  PayButton,
   Shipping,
   Title,
   Total,
@@ -13,6 +17,7 @@ import {
 } from './CartStyles';
 import EmptyCart from '../EmptyCart/EmptyCart';
 import ProductCart from '../ProductCart/ProductCart';
+import Swal from 'sweetalert2';
 
 const calculateTotalPrice = (cartItems) => {
   return cartItems.reduce(
@@ -21,7 +26,41 @@ const calculateTotalPrice = (cartItems) => {
   );
 };
 
-const Cart = ({ cartItems, onRemoveItem, handleAddItem }) => {
+const Cart = ({ cartItems, onRemoveItem, handleAddItem, handleClearCart }) => {
+  const handlePay = () => {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your products have send',
+      showConfirmButton: false,
+      timer: 2000,
+    });
+
+    handleClearCart();
+  };
+
+  const handleClean = () => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Deleted!',
+          text: 'Your cart has been cleaned .',
+          icon: 'success',
+        });
+
+        handleClearCart();
+      }
+    });
+  };
+
   const totalPrice = calculateTotalPrice(cartItems);
   const shippingCost = totalPrice > 100 ? 0 : 50;
   return (
@@ -45,7 +84,7 @@ const Cart = ({ cartItems, onRemoveItem, handleAddItem }) => {
 
           <TotalContainer>
             <TotalTitle>Subtotal: </TotalTitle>
-            <TotalAmount>${totalPrice} US</TotalAmount>
+            <TotalAmount>${totalPrice.toFixed(2)} US</TotalAmount>
           </TotalContainer>
           <TotalContainer>
             <TotalTitle>Shipping: </TotalTitle>
@@ -53,8 +92,18 @@ const Cart = ({ cartItems, onRemoveItem, handleAddItem }) => {
           </TotalContainer>
           <TotalContainer>
             <TotalTitleFinal>Total: </TotalTitleFinal>
-            <Total>${totalPrice + shippingCost} US</Total>
+            <Total>${(totalPrice + shippingCost).toFixed(2)} US</Total>
           </TotalContainer>
+          <ButtonsContainer>
+            <CleanButton onClick={handleClean}>
+              Clean Cart
+              <Cardlogo src={require('../../assets/emptyCart.png')} />
+            </CleanButton>
+            <PayButton onClick={handlePay}>
+              Pay Cart
+              <Cardlogo src={require('../../assets/card.png')} />
+            </PayButton>
+          </ButtonsContainer>
         </>
       ) : (
         <CartProcutList>

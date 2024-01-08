@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   AddIcon,
+  AddLabel,
   AddProduct,
   CloseButton,
   ImageProduct,
@@ -12,6 +13,7 @@ import {
   ProductPrice,
   ProductRating,
   RatingContent,
+  RatingInfo,
   Title,
   TotalReviews,
 } from './ModalProductStyles';
@@ -24,6 +26,7 @@ const ModalProduct = ({ open, close, product, addToCart }) => {
 
   const handleAdd = () => {
     addToCart(product);
+    close();
   };
 
   return (
@@ -40,14 +43,14 @@ const ModalProduct = ({ open, close, product, addToCart }) => {
           <ProductDetails>{product.description}</ProductDetails>
           <ProductPrice>${product.price} US</ProductPrice>
           <RatingContent>
-            <StarRating rating={product.rating.rate} />
-            <ProductRating>{product.rating.rate}</ProductRating>
-            <TotalReviews>({product.rating.count})</TotalReviews>
-            <AddProduct>
-              <AddIcon
-                src={require('../../assets/addcart1.png')}
-                onClick={handleAdd}
-              />
+            <RatingInfo>
+              <StarRating rating={product.rating.rate} />
+              <ProductRating>{product.rating.rate}</ProductRating>
+              <TotalReviews>({product.rating.count})</TotalReviews>
+            </RatingInfo>
+            <AddProduct onClick={handleAdd}>
+              <AddLabel>Add Cart</AddLabel>
+              <AddIcon src={require('../../assets/addcart1.png')} />
             </AddProduct>
           </RatingContent>
         </ModalDetails>
