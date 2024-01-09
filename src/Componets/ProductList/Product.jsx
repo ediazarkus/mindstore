@@ -41,7 +41,7 @@ const Product = ({ searchTerm, addToCart }) => {
         )
       : [];
     setData(filteredResults);
-  }, [searchTerm]);
+  }, [searchTerm, originalData]);
 
   return (
     <>

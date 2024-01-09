@@ -41,7 +41,7 @@ const ModalProduct = ({ open, close, product, addToCart }) => {
         <ModalDetails>
           <Title>{product.title}</Title>
           <ProductDetails>{product.description}</ProductDetails>
-          <ProductPrice>${product.price} US</ProductPrice>
+          <ProductPrice>Price: ${product.price} US</ProductPrice>
           <RatingContent>
             <RatingInfo>
               <StarRating rating={product.rating.rate} />

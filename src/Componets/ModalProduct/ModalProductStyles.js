@@ -20,8 +20,8 @@ export const ModalBack = styled.div`
 
 export const ModalCard = styled.div`
   position: absolute;
-  height: 40%;
-  width: 40%;
+  height: 45%;
+  width: 50%;
   display: flex;
   border-radius: 20px;
   background-color: turquoise;
@@ -43,16 +43,13 @@ export const ImageProduct = styled.img`
 export const ModalDetails = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 50%;
   height: 100%;
   background-color: white;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-`;
-
-export const Title = styled.h3`
-  margin-left: 10px;
+  padding-left: 5px;
 `;
 
 export const CloseButton = styled.img`
@@ -74,12 +71,24 @@ export const CloseButton = styled.img`
   }
 `;
 
+export const Title = styled.h3`
+  margin-left: 10px;
+  height: 10%;
+`;
+
 export const ProductDetails = styled.p`
   margin-left: 10px;
+  height: 40%;
+  overflow-y: auto;
+  max-height: 150px;
+  margin: 0px;
 `;
 
 export const ProductPrice = styled.p`
   margin-left: 10px;
+  height: 10%;
+  font-weight: bold;
+  margin: 0px;
 `;
 
 export const RatingContent = styled.div`
