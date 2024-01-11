@@ -1,26 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   NavbarContainer,
   NavbarTitle,
-  NavbarLinks,
-  NavbarLink,
-  NavbarMenuButton,
   NavbarSearch,
   NavbarTitleImage,
 } from './NavbarStyles';
+import Search from '../Search/Search';
 
 const Navbar = ({ onInputChange }) => {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
-
-  const handleInputChange = (event) => {
-    const term = event.target.value;
-    onInputChange(term);
-  };
-
   return (
     <NavbarContainer>
       <NavbarTitle>
@@ -30,17 +17,7 @@ const Navbar = ({ onInputChange }) => {
         />
         Mind Store
       </NavbarTitle>
-      <NavbarSearch
-        type="text"
-        placeholder="Search..."
-        onChange={handleInputChange}
-      />
-      <NavbarLinks style={{ display: showMenu ? 'flex' : 'none' }}>
-        <NavbarLink href="#">Home</NavbarLink>
-        <NavbarLink href="#">About</NavbarLink>
-        <NavbarLink href="#">Contact</NavbarLink>
-      </NavbarLinks>
-      <NavbarMenuButton onClick={toggleMenu}>☰</NavbarMenuButton>
+      <Search onInputChange={onInputChange} />
     </NavbarContainer>
   );
 };

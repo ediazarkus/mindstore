@@ -7,6 +7,7 @@ export const NavbarContainer = styled.nav`
   align-items: center;
   width: 100%;
   height: 10%;
+  flex-direction: row;
 `;
 
 export const NavbarTitle = styled.h1`
@@ -17,13 +18,6 @@ export const NavbarTitle = styled.h1`
 export const NavbarTitleImage = styled.img`
   width: 30px;
   margin-right: 10px;
-`;
-
-export const NavbarSearch = styled.input`
-  padding: 8px;
-  margin-left: 10%;
-  width: 30%;
-  border-radius: 50px;
 `;
 
 export const NavbarLinks = styled.div`
