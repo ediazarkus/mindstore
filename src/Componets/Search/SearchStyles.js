@@ -23,8 +23,10 @@ export const Microphone = styled.button`
   border: none;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  background-color: ${(props) =>
+    props.listening ? 'lightgreen' : 'lightgray'};
 `;
 
 export const MicroIcon = styled.img`
-  width: 100%;
+  width: 80%;
 `;

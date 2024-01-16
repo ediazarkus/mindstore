@@ -28,7 +28,7 @@ const CardProduct = ({ product, addToCart }) => {
 
   return (
     <>
-      <CardContainer>
+      <CardContainer onClick={handleOpenModal}>
         <CardImage src={product.image} alt={product.title} />
         <CardContent>
           <CardTitle>{product.title}</CardTitle>
@@ -39,10 +39,7 @@ const CardProduct = ({ product, addToCart }) => {
           </CardRatingContent>
           <CardDetails>
             <CardPrice>${product.price} US</CardPrice>
-            <CardIcon
-              src={require('../../assets/zoom.png')}
-              onClick={handleOpenModal}
-            />
+            <CardIcon src={require('../../assets/add1.png')} />
           </CardDetails>
         </CardContent>
       </CardContainer>

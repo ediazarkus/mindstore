@@ -60,10 +60,7 @@ export const CardPrice = styled.p`
 `;
 
 export const CardIcon = styled.img`
-  width: 25px;
-  border: 2px solid black;
-  padding: 6px;
+  width: 40px;
   border-radius: 50px;
-  background-color: white;
   object-fit: contain;
 `;

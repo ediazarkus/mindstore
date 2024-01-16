@@ -18,7 +18,7 @@ export const Title = styled.h1`
 
 export const CartProcutList = styled.div`
   display: flex;
-  height: 60%;
+  height: 65%;
   width: 90%;
   align-items: center;
   flex-direction: column;
@@ -51,7 +51,7 @@ export const Note = styled.p`
   color: red;
   margin-left: 5px;
   margin: 0;
-  height: 3%;
+  height: 5%;
 `;
 export const TotalTitle = styled.p``;
 export const TotalAmount = styled.p``;
@@ -69,7 +69,7 @@ export const Total = styled.p`
 export const ButtonsContainer = styled.div`
   display: flex;
   width: 90%;
-  height: 8%;
+  height: 10%;
   justify-content: space-evenly;
   align-items: center;
 `;

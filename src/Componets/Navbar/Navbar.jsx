@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  NavbarContainer,
-  NavbarTitle,
-  NavbarSearch,
-  NavbarTitleImage,
-} from './NavbarStyles';
+import { NavbarContainer, NavbarTitle, NavbarTitleImage } from './NavbarStyles';
 import Search from '../Search/Search';
 
 const Navbar = ({ onInputChange }) => {

@@ -6,7 +6,7 @@ export const NavbarContainer = styled.nav`
   justify-content: start;
   align-items: center;
   width: 100%;
-  height: 10%;
+  height: 8%;
   flex-direction: row;
 `;
 

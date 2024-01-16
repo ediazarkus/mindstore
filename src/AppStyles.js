@@ -11,7 +11,7 @@ export const AppContainer = styled.div`
 export const AppBody = styled.div`
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 92%;
   flex-direction: row;
   @media (max-width: 768px) {
     flex-direction: column;
